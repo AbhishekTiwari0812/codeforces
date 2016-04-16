@@ -18,12 +18,24 @@ typedef unsigned long long int ull;
 
 using namespace std;
 
-int main(){
-	ios_base::sync_with_stdio(false);
-	int test;
-	cin>>test;
-	while(test--){
+void solve(int n,int a,int b){
+	a+=b;
+	a+= n*10000;
+	a%=n;
+	if(a==0)
+		cout<<n<<endl;
+	else cout<<a<<endl;
+	//cout<<(a%n)<<endl;
 
+}
+int main(){
+	int test;
+	test=1;
+	//cin>>test;
+	while(test--){
+		int n,a,b;
+		cin>>n>>a>>b;
+		solve(n,a,b);
 
 	}
 	return 0;
