@@ -21,9 +21,15 @@ using namespace std;
 int main(){
 	int test;
 	cin>>test;
+	long total=0;
+	int temp;
 	while(test--){
-
-
+		cin>>temp;
+		temp-=1;
+		total+=temp;
+		if(total%2==0)
+			cout<<2<<endl;
+		else cout<<1<<endl;
 	}
 	return 0;
 }

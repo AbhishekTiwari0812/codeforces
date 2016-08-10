@@ -17,13 +17,25 @@ typedef long double ld;
 typedef unsigned long long int ull;
 
 using namespace std;
+int FINAL;
+
+void print_string(int n){
+	if(n==FINAL){
+		if(n%2==0)
+			cout<<"I love it\n";
+		else cout<<"I hate it\n";
+	}
+	else{
+		if(n%2==1){
+			cout<<"I hate that ";
+		}
+		else cout<<"I love that ";
+		print_string(n+1);
+	}
+}
 
 int main(){
-	int test;
-	cin>>test;
-	while(test--){
-
-
-	}
+	cin>>FINAL;
+	print_string(1);
 	return 0;
 }
