@@ -27,6 +27,23 @@ typedef pair<int,int> ii;
 
 int main(){
 	FastIO
-	
+	int k;
+	int r;
+	cin>>k>>r;
+	int p = 0;
+	int n;
+	while(true){
+		if ( ( 10 * p ) % k == 0 ){
+			n =  ( 10*p ) / k;
+			if(n)
+				break;
+		}
+		if ( (10*p + r) % k == 0 ){
+			n = (10*p + r) / k;
+			break;
+		}
+		else p++;
+	}
+	cout<<n<<endl;
 	return 0;
 }

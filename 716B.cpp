@@ -27,6 +27,54 @@ typedef pair<int,int> ii;
 
 int main(){
 	FastIO
-	
+	string s;
+	cin>>s;
+	int a[26];
+	f(i,0,26)
+		a[i] = 0;
+	if(s.length() <  26){
+		cout<<(-1)<<endl;
+		return 0;
+	}
+	int quest = 0;
+	f(i,0,26){
+		if(s[i] != '?')
+			a[s[i]-'a']++;
+		else quest++;
+	}
+	int miss = 0;
+	f(i,0,26){
+		if(s[i] > 1){
+			cout<<(-1)<<endl;
+			return 0;
+		}
+		else if(s[i] == 0){
+			miss++;
+		}
+	}
+	if(miss != quest){
+		cout<<(-1)<<endl;
+		return 0;
+	}
+	for(int i=26;i<s.length();++i){
+		if(s[i-26] == '?'){
+			quest--;
+		}
+		else{
+			miss++;
+		}
+		if(s[i] == '?')
+			quest++;
+		else{
+			if(a[s[i]-'a'] == 0){
+				a[s[i]-'a']++;
+				miss++;
+			}
+		}
+		if(miss+quest != 26){
+			cout<<(-1)<<endl;
+			break;
+		}
+	}	
 	return 0;
 }

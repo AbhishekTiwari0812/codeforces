@@ -27,6 +27,17 @@ typedef pair<int,int> ii;
 
 int main(){
 	FastIO
-	
+	int n;
+	cin>>n;
+	ll a[100001];
+	ll b[100001];
+	f(i,0,n)
+		cin>>a[i];
+	b[n-1]=a[n-1];
+	fr(i,n-2,0){
+		b[i] = a[i] +  a[i+1];
+	}
+	f(i,0,n)
+		cout<<b[i]<<' ';
 	return 0;
 }

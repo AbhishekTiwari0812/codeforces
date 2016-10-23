@@ -27,6 +27,29 @@ typedef pair<int,int> ii;
 
 int main(){
 	FastIO
-	
+	int n;
+	cin>>n;
+	map<int,int> m;
+	int temp;
+	f(i,0,n){
+		cin>>temp;
+		m[temp]++;
+	}	
+	if(m.size() > 3){
+		cout<<"No\n";
+	}
+	else if(m.size()==3){
+		int a[3];
+		int i=0;
+		for(map<int,int>::iterator it = m.begin(); it!=m.end();++it){
+			a[i++] = it->first;
+		}
+		int diff1 = a[2]-a[1];
+		int diff2 = a[1]-a[0];
+		if(diff2 == diff1)
+			cout<<"Yes\n";
+		else cout<<"No\n";
+	}
+	else cout<<"Yes\n";
 	return 0;
 }

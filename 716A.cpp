@@ -27,6 +27,19 @@ typedef pair<int,int> ii;
 
 int main(){
 	FastIO
-	
+	int n,k;
+	cin>>n>>k;
+	int a[(int)1e5+4];
+	f(i,0,n)
+		cin>>a[i];
+	int count = 1;
+	f(i,1,n){
+		if(a[i] - a[i-1] > k){
+			//cout<<"dis bef" << a[i] << endl;
+			count = 1;
+		}
+		else count++;
+	}
+	cout<<count<<endl;
 	return 0;
 }

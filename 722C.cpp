@@ -24,9 +24,42 @@ typedef set<ll> sll;
 typedef set<ld> sld;
 typedef pair<int,int> ii;
 
+struct node{
+	int id;
+	ll left;
+	ll right;
+};
+
+class cmp{
+public:
+	bool operator()(const node &a, const node &b)const{
+		return a.id < b.id;
+	}
+};
 
 int main(){
 	FastIO
-	
+	int n;
+	cin>>n;
+	ll a[(int)1e5+3];
+	ll b[(int)1e5+3];
+	ll s[(int)1e5+3];
+	f(i,0,n){
+		cin>>a[i];
+		if(i)
+			s[i] += s[i-1]+a[i];
+		else s[i] = a[i];
+	}	
+	f(i,0,n)
+		cin>>b[i];
+	set<node,cmp> s;
+	f(i,0,n){
+		node temp;
+		temp.id = b[i];
+		set<node,cmp>::iterator it = s.lower_bound(temp);
+		node temp1 = (*it);
+		it++;
+		node temp2 = (*it);
+	}
 	return 0;
 }

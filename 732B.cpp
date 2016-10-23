@@ -24,9 +24,37 @@ typedef set<ll> sll;
 typedef set<ld> sld;
 typedef pair<int,int> ii;
 
+//a[0] = k
+//a[n] = k
+int a[502];
+int n;
+int k;
+int memo[504][504];
+int b[502];
+
+int solve(){
+	int ans = 0;
+	f(i,0,n+1){
+		if(a[i] + a[i+1] < k){
+			int t = k - a[i] - a[i+1];
+			ans += t;
+			a[i+1] += t;
+		}
+	}
+	return ans;
+}
 
 int main(){
 	FastIO
-	
+	cin>>n>>k;
+	a[n+1]=k;
+	a[0] = k;
+	f(i,0,n){
+		cin>>a[i+1];
+	}
+	cout<<solve()<<endl;
+	f(i,1,n+1){
+		cout<<a[i] << ' ';
+	}
 	return 0;
 }
